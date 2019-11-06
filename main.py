@@ -18,6 +18,9 @@ class MainWindow(wx.Frame):
         wx.Frame.__init__(self, parent, title=title, size=(800, 600))
         self.control = stc.StyledTextCtrl(self, style=wx.TE_MULTILINE | wx.TE_WORDWRAP)
 
+        # control + = to zoom in
+        self.control.CmdKeyAssign(ord('='), stc.STC_SCMOD_CTRL,stc.STC_CMD_ZOOMIN)
+
         self.Show()
 app = wx.App()
 frame = MainWindow(None, "My text Editor")
