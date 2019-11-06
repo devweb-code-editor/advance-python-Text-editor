@@ -30,8 +30,13 @@ class MainWindow(wx.Frame):
         self.control.SetMarginType(1, stc.STC_MARGIN_NUMBER)
         self.control.SetMarginWidth(1, self.leftMarginWidth)
 
+        # status  bar
+        self.CreateStatusBar()
+        self.StatusBar.SetBackgroundColour((220,220, 220))
+
 
         self.Show()
+
 app = wx.App()
 frame = MainWindow(None, "My text Editor")
 app.MainLoop()
