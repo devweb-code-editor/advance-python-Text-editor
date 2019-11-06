@@ -32,7 +32,21 @@ class MainWindow(wx.Frame):
 
         # status  bar
         self.CreateStatusBar()
-        self.StatusBar.SetBackgroundColour((220,220, 220))
+        self.StatusBar.SetBackgroundColour((220, 220, 220))
+
+        # Menubar
+        filemenu = wx.Menu()
+        menunew = filemenu.Append(wx.ID_NEW, "&New", "Create a new Document")
+        menuOpen = filemenu.Append(wx.ID_OPEN, "&open", "Open a existing document")
+        menuSave = filemenu.Append(wx.ID_SAVE, "&save", "save the current Document")
+        menuSaveAs = filemenu.Append(wx.ID_SAVEAS, "Save &As", "Save a new Document")
+        filemenu.AppendSeparator()
+        menuClose = filemenu.Append(wx.ID_EXIT, "&close", "Close the Application")
+
+
+        menuBar = wx.MenuBar()
+        menuBar.Append(filemenu, "&File")
+        self.SetMenuBar(menuBar)
 
 
         self.Show()
