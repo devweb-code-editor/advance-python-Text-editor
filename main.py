@@ -23,7 +23,12 @@ class MainWindow(wx.Frame):
 
         # control - = to zoom out
         self.control.CmdKeyAssign(ord('-'), stc.STC_SCMOD_CTRL, stc.STC_CMD_ZOOMOUT)
-
+        # not show white space
+        self.control.SetViewWhiteSpace(False)
+        # line numbers
+        self.control.SetMargins(5, 0)
+        self.control.SetMarginType(1, stc.STC_MARGIN_NUMBER)
+        self.control.SetMarginWidth(1, self.leftMarginWidth)
 
 
         self.Show()
