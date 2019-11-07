@@ -54,7 +54,7 @@ class MainWindow(wx.Frame):
         editmenu.AppendSeparator()
         menuSelectAll = editmenu.Append(wx.ID_SELECTALL, "&Select ALl", "Select the entire Document")
         menuCopy = editmenu.Append(wx.ID_COPY, "&Copy", "Copy Selected text")
-        munuCut = editmenu.Append(wx.ID_CUT, "&Cut", "Cut the selected text")
+        menuCut = editmenu.Append(wx.ID_CUT, "&Cut", "Cut the selected text")
         menuPast = editmenu.Append(wx.ID_PASTE, "&Paste", "Paste text from the clipboard")
 
         prefmenu = wx.Menu()
@@ -62,11 +62,12 @@ class MainWindow(wx.Frame):
 
         helumenu = wx.Menu()
 
-        munuHowTo  = helumenu.Append(wx.ID_ANY, "&How to", "Get help using the editor")
+        menuHowTo  = helumenu.Append(wx.ID_ANY, "&How to", "Get help using the editor")
         helumenu.AppendSeparator()
         menuAbout = helumenu.Append(wx.ID_ABOUT, "&about", "Read about the editor and its making")
 
 
+        #meunu bar creating
         menuBar = wx.MenuBar()
         menuBar.Append(filemenu, "&File")
         menuBar.Append(editmenu, "&Edit")
@@ -74,8 +75,28 @@ class MainWindow(wx.Frame):
         menuBar.Append(helumenu, "&help")
         self.SetMenuBar(menuBar)
 
+        self.Bind(wx.EVT_MENU, self.OnNew, menunew)
+        self.Bind(wx.EVT_MENU, self.OnOpen, menuOpen)
+        self.Bind(wx.EVT_MENU, self.OnSave, menuSave)
+        self.Bind(wx.EVT_MENU, self.OnSaveAS, menuSaveAs)
+        self.Bind(wx.EVT_MENU, self.onClose, menuClose)
+
+        self.Bind(wx.EVT_MENU, self.OnUndo, menuUndo)
+        self.Bind(wx.EVT_MENU, self.OnRedo, menuRedo)
+        self.Bind(wx.EVT_MENU, self.OnSelectAll, menuSelectAll)
+        self.Bind(wx.EVT_MENU, self.OnCopy, menuCopy)
+        self.Bind(wx.EVT_MENU, self.OnCut, menuCut)
+        self.Bind(wx.EVT_MENU, self.OnPaste, menuPast)
+
+        self.Bind(wx.EVT_MENU, self.OnToggleLineNUmber, menulineNumber)
+
+        self.Bind(wx.EVT_MENU, self.OnHowTo, menuHowTo)
+        self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
+
+
         self.Show()
 
+        #functions on menu bars
     def OnNew(self, e):
         self.filename = ''
         self.control.SetValue("")
