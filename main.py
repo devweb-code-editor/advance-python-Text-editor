@@ -135,6 +135,10 @@ class MainWindow(wx.Frame):
         self.control.Redo()
     def OnSelectAll(self, e):
         self.control.SelectAll()
+    def OnCopy(self ,e):
+        self.control.Copy()
+
+
 
 
 app = wx.App()
