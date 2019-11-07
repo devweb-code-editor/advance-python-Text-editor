@@ -131,11 +131,8 @@ class MainWindow(wx.Frame):
         self.Close(True)
     def OnUndo(self, e):
         self.control.Undo()
-
-
-
-
-
+    def OnRedo(self, e):
+        self.control.Redo()
 
 
 
