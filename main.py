@@ -127,6 +127,9 @@ class MainWindow(wx.Frame):
         except:
             pass
 
+    def onClose(self, e):
+        self.Close(True)
+
 
 
 
