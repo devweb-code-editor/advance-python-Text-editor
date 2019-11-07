@@ -75,7 +75,11 @@ class MainWindow(wx.Frame):
 
         self.Show()
 
-    
+    def OnNew(self, e):
+        self.filename = ''
+        self.control.SetValue("")
+
+
 
 
 app = wx.App()
