@@ -13,7 +13,11 @@ fasec = {
 
 class MainWindow(wx.Frame):
     def __init__(self, parent, title):
+        self.dirname = ''    # hold the currnt directory
+        self.filename = ''      #hold the file name
         self.leftMarginWidth = 25
+        # toggle line numbers in preferences menu
+        self.lineNumbersEnable = True
 
         wx.Frame.__init__(self, parent, title=title, size=(800, 600))
         self.control = stc.StyledTextCtrl(self, style=wx.TE_MULTILINE | wx.TE_WORDWRAP)
@@ -69,9 +73,10 @@ class MainWindow(wx.Frame):
         menuBar.Append(helumenu, "&help")
         self.SetMenuBar(menuBar)
 
-
-
         self.Show()
+
+    
+
 
 app = wx.App()
 frame = MainWindow(None, "My text Editor")
