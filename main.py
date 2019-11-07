@@ -52,9 +52,21 @@ class MainWindow(wx.Frame):
         munuCut = editmenu.Append(wx.ID_CUT, "&Cut", "Cut the selected text")
         menuPast = editmenu.Append(wx.ID_PASTE, "&Paste", "Paste text from the clipboard")
 
+        prefmenu = wx.Menu()
+        menulineNumber = prefmenu.Append(wx.ID_ANY, "Toggle &Line Numbers", "Show/Hide line numbers colum")
+
+        helumenu = wx.Menu()
+
+        munuHowTo  = helumenu.Append(wx.ID_ANY, "&How to", "Get help using the editor")
+        helumenu.AppendSeparator()
+        menuAbout = helumenu.Append(wx.ID_ABOUT, "&about", "Read about the editor and its making")
+
+
         menuBar = wx.MenuBar()
         menuBar.Append(filemenu, "&File")
         menuBar.Append(editmenu, "&Edit")
+        menuBar.Append(prefmenu, "&Preferences")
+        menuBar.Append(helumenu, "&help")
         self.SetMenuBar(menuBar)
 
 
