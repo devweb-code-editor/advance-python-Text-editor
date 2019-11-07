@@ -148,6 +148,11 @@ class MainWindow(wx.Frame):
         else:
             self.control.SetMarginWidth(1, self.leftMarginWidth)
             self.lineNumbersEnable = True
+    def OnHowTo(self, e):
+        dlg = wx.lib.dialogs.ScrolledMessageDialog(self, "this is how to.", size=(400, 400))
+        dlg.ShowModal()
+        dlg.Destroy()
+
 
 
 app = wx.App()
