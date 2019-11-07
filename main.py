@@ -43,10 +43,20 @@ class MainWindow(wx.Frame):
         filemenu.AppendSeparator()
         menuClose = filemenu.Append(wx.ID_EXIT, "&close", "Close the Application")
 
+        editmenu = wx.Menu()
+        menuUndo = editmenu.Append(wx.ID_UNDO, "&Undo", "Undo last action")
+        menuRedo = editmenu.Append(wx.ID_REDO, "&Redo", "Redo last action")
+        editmenu.AppendSeparator()
+        menuSelectAll = editmenu.Append(wx.ID_SELECTALL, "&Select ALl", "Select the entire Document")
+        menuCopy = editmenu.Append(wx.ID_COPY, "&Copy", "Copy Selected text")
+        munuCut = editmenu.Append(wx.ID_CUT, "&Cut", "Cut the selected text")
+        menuPast = editmenu.Append(wx.ID_PASTE, "&Paste", "Paste text from the clipboard")
 
         menuBar = wx.MenuBar()
         menuBar.Append(filemenu, "&File")
+        menuBar.Append(editmenu, "&Edit")
         self.SetMenuBar(menuBar)
+
 
 
         self.Show()
