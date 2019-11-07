@@ -139,6 +139,8 @@ class MainWindow(wx.Frame):
         self.control.Copy()
     def OnCut(self, e):
         self.control.Cut()
+    def OnPaste(self, e):
+        self.control.Paste()
 
 
 
