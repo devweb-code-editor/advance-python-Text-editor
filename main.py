@@ -141,7 +141,13 @@ class MainWindow(wx.Frame):
         self.control.Cut()
     def OnPaste(self, e):
         self.control.Paste()
-
+    def OnToggleLineNUmber(self, e):
+        if(self.lineNumbersEnable == True):
+            self.control.SetMarginWidth(1, 0)
+            self.lineNumbersEnable = False
+        else:
+            self.control.SetMarginWidth(1, self.leftMarginWidth)
+            self.lineNumbersEnable = True
 
 
 app = wx.App()
