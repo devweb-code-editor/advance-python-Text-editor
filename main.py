@@ -137,7 +137,8 @@ class MainWindow(wx.Frame):
         self.control.SelectAll()
     def OnCopy(self ,e):
         self.control.Copy()
-
+    def OnCut(self, e):
+        self.control.Cut()
 
 
 
