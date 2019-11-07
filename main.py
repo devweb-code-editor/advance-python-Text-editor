@@ -133,7 +133,8 @@ class MainWindow(wx.Frame):
         self.control.Undo()
     def OnRedo(self, e):
         self.control.Redo()
-
+    def OnSelectAll(self, e):
+        self.control.SelectAll()
 
 
 app = wx.App()
