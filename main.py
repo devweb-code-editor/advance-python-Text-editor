@@ -129,6 +129,9 @@ class MainWindow(wx.Frame):
 
     def onClose(self, e):
         self.Close(True)
+    def OnUndo(self, e):
+        self.control.Undo()
+
 
 
 
