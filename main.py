@@ -153,6 +153,10 @@ class MainWindow(wx.Frame):
         dlg.ShowModal()
         dlg.Destroy()
 
+    def OnAbout(self, e):
+        dlg =wx.MessageDialog(self, "My advance text ediot i made with python and wx", wx.OK)
+        dlg.ShowModal()
+        dlg.Destroy()
 
 
 app = wx.App()
